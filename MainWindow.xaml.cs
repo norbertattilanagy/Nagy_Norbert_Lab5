@@ -111,14 +111,23 @@ namespace Nagy_Norbert_Lab5
                     BindingOperations.ClearBinding(firstNameTextBox, TextBox.TextProperty);
                     BindingOperations.ClearBinding(lastNameTextBox, TextBox.TextProperty);
                     firstNameTextBox.Text = ""; lastNameTextBox.Text = "";
-                    Keyboard.Focus(firstNameTextBox); break; 
+                    Keyboard.Focus(firstNameTextBox);
+                    SetValidationBinding();
+                    break; 
                 case "Orders": 
                     break; 
             }
         }
+
+        private void SetValidationBinding()
+        {
+            throw new NotImplementedException();
+        }
+
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             action = ActionState.Edit;
+            SetValidationBinding();
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
